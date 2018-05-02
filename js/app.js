@@ -27,10 +27,8 @@ Enemy.prototype.update = function(dt) {
         this.x = -50;
         this.speed = 150 + Math.floor(Math.random() * 200);
     }
-     if (player.x < this.x + 30 &&
-        player.x + 30 > this.x &&
-        player.y < this.y + 50 &&
-        50 + player.y > this.y) {
+     if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 50 && 50 + player.y > this.y) {
+        /* when the player collides with the bug reset the game board and decrease the life value*/
         player.reset();
         player.lives();
     }
@@ -63,10 +61,21 @@ Player.prototype.update = function(){
         this.y = 400;
     }
     if(this.y < -10){
-        this.reset();
+        this.win();
     }
 };
 
+/*if a Player wins the game*/
+Player.prototype.win = function(){
+    move.innerHTML = '0';
+    this.x = 200;
+    this.y = 400;
+    count = 0;
+    life = 3;
+    alert(" Congrats!! You have won!!")
+};
+
+/*if a player looses the game*/
 Player.prototype.reset = function(){
     move.innerHTML = '0';
     this.x = 200;
@@ -79,8 +88,9 @@ Player.prototype.lives = function(){
     life = life-1;
     if(life == 0){
         alert("You have no lives left :( Play Again!!");
+        life = 3;
     }
-}
+};
 
 Player.prototype.handleInput = function(key){
     if(key == 'left'){
@@ -106,11 +116,12 @@ Player.prototype.render = function(){
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
-var bug;
-[60,145,230].forEach(function(yPosi) {
-    bug = new Enemy(100 + Math.floor(Math.random  () * 400), 0, yPosi);
-    allEnemies.push(bug);
-});
+    var bug0 = new Enemy(100 + Math.floor(Math.random  () * 400), 0, 60);
+    var bug1 = new Enemy(100 + Math.floor(Math.random  () * 400), 0, 145);
+    var bug2 = new Enemy(100 + Math.floor(Math.random  () * 400), 0, 230);
+    allEnemies.push(bug0);
+    allEnemies.push(bug1);
+    allEnemies.push(bug2);
 
 // Place the player object in a variable called player
 var player = new Player(20, 200, 400);
