@@ -74,12 +74,13 @@ Player.prototype.win = function(){
     this.x = 200;
     this.y = 400;
     count = 0;
-    life = 3;
+    /*If a player wins the game a life will be added*/
+    life = life+1;
+    alert(" Congrats!! You have won!!, A life have been added");
     li.innerHTML = life;
-    alert(" Congrats!! You have won!!")
 };
 
-/*if a player looses the game*/
+/*if a player looses the game resets the values*/
 Player.prototype.reset = function(){
     move.innerHTML = '0';
     this.x = 200;
