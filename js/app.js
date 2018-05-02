@@ -1,7 +1,10 @@
+/*Count the number of moves intitally they are 0*/
 var count = 0;
 var move = document.getElementById('moves');
+/*No. of lives*/
 var life = 3;
-
+var li = document.getElementById('lives')
+li.innerHTML = life;
 // Enemies our player must avoid
 var Enemy = function(speed, x, y) {
     this.x = x;
@@ -72,6 +75,7 @@ Player.prototype.win = function(){
     this.y = 400;
     count = 0;
     life = 3;
+    li.innerHTML = life;
     alert(" Congrats!! You have won!!")
 };
 
@@ -86,6 +90,7 @@ Player.prototype.reset = function(){
 /*Function to decrease the life if it player collides with enemies*/
 Player.prototype.lives = function(){
     life = life-1;
+    li.innerHTML = life;
     if(life == 0){
         alert("You have no lives left :( Play Again!!");
         life = 3;
