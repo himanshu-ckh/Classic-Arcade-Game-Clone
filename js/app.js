@@ -29,7 +29,8 @@ Enemy.prototype.update = function(dt) {
 
     if(this.x>505){
         this.x = -50;
-        this.speed = 150 + Math.floor(Math.random() * 200);
+        var r_2 = Math.floor(Math.random() * 200)
+        this.speed = 150 + r_2;
     }
     if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 40 && 50 + player.y > this.y) {
         /* when the player collides with the bug reset the game board and decrease the life value*/
