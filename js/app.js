@@ -108,7 +108,7 @@ Player.prototype.lives = function() {
 
 Player.prototype.handleInput = function(key) {
     if(key == 'left'){
-        this.x = this.x-30;
+        this.x = this.x - 30;
         count = count + 1;
     } else if(key == 'right') {
         this.x = this.x + 30;
