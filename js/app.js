@@ -130,13 +130,18 @@ Player.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
-var sped = Math.floor(Math.random() * 400);
-    var bug0 = new Enemy(sped, 0, 60);
-    var bug1 = new Enemy(sped, 0, 145);
-    var bug2 = new Enemy(sped, 0, 230);
-    allEnemies.push(bug0);
-    allEnemies.push(bug1);
-    allEnemies.push(bug2);
+/*Speed at which the enemy will start*/
+var sped1 = Math.floor(Math.random() * 200);
+var sped2 = Math.floor(Math.random() * 200);
+var sped3 = Math.floor(Math.random() * 200);
+/*added bug objects*/
+var bug0 = new Enemy(sped1, 0, 60);
+var bug1 = new Enemy(sped2, 0, 145);
+var bug2 = new Enemy(sped3, 0, 230);
+/*added all the bug objects to allEnemies array*/
+allEnemies.push(bug0);
+allEnemies.push(bug1);
+allEnemies.push(bug2);
 
 // Place the player object in a variable called player
 var player = new Player(40, 200, 400);
