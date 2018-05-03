@@ -3,7 +3,7 @@ var count = 0;
 var move = document.getElementById('moves');
 /*No. of lives*/
 var life = 3;
-var li = document.getElementById('lives')
+var li = document.getElementById('lives');
 li.innerHTML = life;
 // Enemies our player must avoid
 var Enemy = function(speed, x, y) {
@@ -20,6 +20,7 @@ var Enemy = function(speed, x, y) {
 
 // Update the enemy's position, required method for game
 // Parameter: dt, a time delta between ticks
+
 Enemy.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter
     // which will ensure the game runs at the same speed for
@@ -30,7 +31,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -50;
         this.speed = 150 + Math.floor(Math.random() * 200);
     }
-     if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 40 && 50 + player.y > this.y) {
+    if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 40 && 50 + player.y > this.y) {
         /* when the player collides with the bug reset the game board and decrease the life value*/
         player.reset();
         player.lives();
@@ -49,9 +50,11 @@ var Player = function(pSpeed, x, y){
     this.speed = pSpeed;
     this.x = x;
     this.y = y;
+    /*playerArray to store all the characters*/
     var playerArray = ['char-boy.png', 'char-cat-girl.png', 'char-horn-girl.png', 'char-pink-girl.png', 'char-princess-girl.png'];
-    var r = Math.floor(Math.random() * 4);
+    var r = Math.floor(Math.random() * 5);
     var img = playerArray[r];
+    /*when we refresh the game a new character will load*/
     this.sprite = 'images/' + img;
 };
 
@@ -134,6 +137,7 @@ var allEnemies = [];
 
 // Place the player object in a variable called player
 var player = new Player(20, 200, 400);
+
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
