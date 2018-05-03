@@ -30,7 +30,7 @@ Enemy.prototype.update = function(dt) {
         this.x = -50;
         this.speed = 150 + Math.floor(Math.random() * 200);
     }
-     if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 50 && 50 + player.y > this.y) {
+     if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 40 && 50 + player.y > this.y) {
         /* when the player collides with the bug reset the game board and decrease the life value*/
         player.reset();
         player.lives();
@@ -49,7 +49,10 @@ var Player = function(pSpeed, x, y){
     this.speed = pSpeed;
     this.x = x;
     this.y = y;
-    this.sprite = 'images/char-boy.png';
+    var playerArray = ['char-boy.png', 'char-cat-girl.png', 'char-horn-girl.png', 'char-pink-girl.png', 'char-princess-girl.png'];
+    var r = Math.floor(Math.random() * 4);
+    var img = playerArray[r];
+    this.sprite = 'images/' + img;
 };
 
 Player.prototype.update = function(){
@@ -122,9 +125,9 @@ Player.prototype.render = function(){
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
-    var bug0 = new Enemy(100 + Math.floor(Math.random  () * 400), 0, 60);
-    var bug1 = new Enemy(100 + Math.floor(Math.random  () * 400), 0, 145);
-    var bug2 = new Enemy(100 + Math.floor(Math.random  () * 400), 0, 230);
+    var bug0 = new Enemy(100 + Math.floor(Math.random() * 400), 0, 60);
+    var bug1 = new Enemy(100 + Math.floor(Math.random() * 400), 0, 145);
+    var bug2 = new Enemy(100 + Math.floor(Math.random() * 400), 0, 230);
     allEnemies.push(bug0);
     allEnemies.push(bug1);
     allEnemies.push(bug2);
