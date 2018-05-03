@@ -128,16 +128,16 @@ Player.prototype.render = function(){
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
-    var bug0 = new Enemy(100 + Math.floor(Math.random() * 400), 0, 60);
-    var bug1 = new Enemy(100 + Math.floor(Math.random() * 400), 0, 145);
-    var bug2 = new Enemy(100 + Math.floor(Math.random() * 400), 0, 230);
+var sped = 100 + Math.floor(Math.random() * 400);
+    var bug0 = new Enemy(sped, 0, 60);
+    var bug1 = new Enemy(sped, 0, 145);
+    var bug2 = new Enemy(sped, 0, 230);
     allEnemies.push(bug0);
     allEnemies.push(bug1);
     allEnemies.push(bug2);
 
 // Place the player object in a variable called player
-var player = new Player(20, 200, 400);
-
+var player = new Player(40, 200, 400);
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
