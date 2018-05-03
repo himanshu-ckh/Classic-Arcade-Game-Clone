@@ -100,7 +100,7 @@ Player.prototype.lives = function() {
     life = life-1;
     li.innerHTML = life;
     if(life == 0){
-        alert("You have no lives left :( Play Again!!");
+        alert("You have no lives left :( \nPlay again");
         life = 3;
     }
 };
