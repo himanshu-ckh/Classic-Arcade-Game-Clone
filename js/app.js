@@ -46,7 +46,7 @@ Enemy.prototype.render = function() {
 // Now write your own player class
 // This class requires an update(), render() and
 // a handleInput() method.
-var Player = function(pSpeed, x, y){
+var Player = function(pSpeed, x, y) {
     this.speed = pSpeed;
     this.x = x;
     this.y = y;
@@ -58,7 +58,7 @@ var Player = function(pSpeed, x, y){
     this.sprite = 'images/' + img;
 };
 
-Player.prototype.update = function(){
+Player.prototype.update = function() {
     if(this.x<0){
         this.x=0;
     }
@@ -75,7 +75,7 @@ Player.prototype.update = function(){
 };
 
 /*if a Player wins the game*/
-Player.prototype.win = function(){
+Player.prototype.win = function() {
     move.innerHTML = '0';
     this.x = 200;
     this.y = 400;
@@ -87,7 +87,7 @@ Player.prototype.win = function(){
 };
 
 /*if a player looses the game resets the values*/
-Player.prototype.reset = function(){
+Player.prototype.reset = function() {
     move.innerHTML = '0';
     this.x = 200;
     this.y = 400;
@@ -95,7 +95,7 @@ Player.prototype.reset = function(){
 };
 
 /*Function to decrease the life if it player collides with enemies*/
-Player.prototype.lives = function(){
+Player.prototype.lives = function() {
     life = life-1;
     li.innerHTML = life;
     if(life == 0){
@@ -104,7 +104,7 @@ Player.prototype.lives = function(){
     }
 };
 
-Player.prototype.handleInput = function(key){
+Player.prototype.handleInput = function(key) {
     if(key == 'left'){
         this.x = this.x-30;
         count = count + 1;
@@ -121,7 +121,7 @@ Player.prototype.handleInput = function(key){
     move.innerHTML = count;
 };
 
-Player.prototype.render = function(){
+Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 };
 
