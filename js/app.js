@@ -5,7 +5,8 @@ var move = document.getElementById('moves');
 var life = 3;
 var li = document.getElementById('lives');
 li.innerHTML = life;
-// Enemies our player must avoid
+
+/*Enemy class*/
 var Enemy = function(speed, x, y) {
     this.x = x;
     this.y = y;
