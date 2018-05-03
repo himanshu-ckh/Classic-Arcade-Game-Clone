@@ -29,7 +29,7 @@ Enemy.prototype.update = function(dt) {
 
     if(this.x>505){
         this.x = -50;
-        var r_2 = Math.floor(Math.random() * 200)
+        var r_2 = Math.floor(Math.random() * 600)
         this.speed = 150 + r_2;
     }
     if (player.x < this.x + 30 && player.x + 30 > this.x && player.y < this.y + 40 && 50 + player.y > this.y) {
@@ -70,6 +70,7 @@ Player.prototype.update = function() {
     if(this.y > 400){
         this.y = 400;
     }
+    /*Player reaches water*/
     if(this.y < -10){
         this.win();
     }
@@ -129,7 +130,7 @@ Player.prototype.render = function() {
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
 var allEnemies = [];
-var sped = 100 + Math.floor(Math.random() * 400);
+var sped = Math.floor(Math.random() * 400);
     var bug0 = new Enemy(sped, 0, 60);
     var bug1 = new Enemy(sped, 0, 145);
     var bug2 = new Enemy(sped, 0, 230);
